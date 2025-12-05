@@ -1,0 +1,101 @@
+ **Projeto Integrado de Infraestrutura, Conectividade e Monitoramento — Concluído
+
+Concluímos o desenvolvimento de um ambiente corporativo completo, integrando infraestrutura de rede, segurança, conectividade entre sites e monitoramento em tempo real.
+Esse projeto envolveu o trabalho de forma colaborativa para reproduzir um cenário empresarial real, com comunicação segura entre matriz, filial e nuvem, além de uma aplicação corporativa com autenticação e
+banco de dados em cloud.
+
+A seguir, um resumo técnico das soluções implementadas.
+
+ **Arquitetura de Rede – Matriz e Filial
+
+Implementamos uma arquitetura corporativa contendo:
+
+Matriz
+
+Firewall FortiGate atuando como núcleo de segurança e roteamento.
+
+VLANs segmentadas para:
+
+VLAN 3 – Servidores
+
+VLAN 5 – Usuários
+
+VLAN 8 – TI
+
+Políticas de acesso restritivo entre matriz ↔ filial.
+
+VPN site-to-site entre:
+
+Matriz ↔ AWS (banco de dados)
+
+Matriz ↔ Filial
+
+Autenticação centralizada via Active Directory com suporte a SSO.
+
+Filial
+
+Firewall com controle de navegação e acesso.
+
+VPN redundante com a Matriz.
+
+Roteamento da Internet feito exclusivamente pela Matriz.
+
+Rede estruturada para 5 usuários, com controle de acesso baseado em dispositivos autorizados.
+
+**Ambiente em Nuvem
+
+Banco de dados corporativo hospedado na AWS.
+
+Comunicação protegida via VPN IPsec.
+
+Alta disponibilidade e isolamento da camada de dados.
+
+**Aplicação Corporativa
+
+Criamos uma aplicação web hospedada na matriz, com:
+
+Autenticação via AD.
+
+Integração direta ao banco de dados hospedado na nuvem.
+
+Foco didático em segurança, acesso controlado e boas práticas de backend.
+
+**Monitoramento – Zabbix e Grafana
+
+Responsabilidade do nosso grupo (Grupo 3):
+
+Implantação de servidor Linux dedicado ao Zabbix Server.
+
+Instalação de Zabbix Agent e monitoramento via SNMP.
+
+Integração com:
+
+Firewall FortiGate
+
+Servidores Windows e Linux
+
+Configurações implementadas:
+
+Métricas de CPU, memória, interfaces, disponibilidade e latência.
+
+Dashboards completos no Zabbix e Grafana.
+
+Triggers proativas (ex.: perda de conectividade, CPU > 80%, indisponibilidade de serviços).
+
+Demonstração de cenários de falha simulada com alertas em tempo real.
+
+**Resultado Final
+
+O projeto entregou um ambiente híbrido corporativo completo, incluindo:
+
+✔ Rede segmentada e segura
+✔ Conexão entre matriz–filial–nuvem
+✔ Alta disponibilidade via BGP
+✔ Firewall + VPN + políticas centralizadas
+✔ Servidor de aplicação com autenticação
+✔ Banco em nuvem
+✔ Monitoramento completo e automatizado
+
+Esse trabalho consolidou, na prática, conhecimentos essenciais em redes de computadores, segurança da informação, computação em nuvem, administração de sistemas Windows e Linux, 
+além da implementação de soluções de monitoramento corporativo em tempo real. Ao integrar tecnologias como firewall FortiGate, Active Directory, VPN, servidores na nuvem, Zabbix e Grafana,
+foi possível compreender não apenas a teoria, mas também os desafios reais de planejar, configurar e manter uma infraestrutura robusta, segura e altamente disponível.
